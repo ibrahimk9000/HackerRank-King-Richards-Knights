@@ -1,6 +1,6 @@
 // created by ibrahim khochmane
 // email :ibra1990ski@gmail.com
-//just a messy and unmentenable code
+//just a messy and unmaintenable code
 //excution time 299.499202ms for test 4 (I5 pc)
 // O(n log n) approximate
 
