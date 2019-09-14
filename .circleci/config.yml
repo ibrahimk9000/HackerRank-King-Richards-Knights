@@ -1,10 +1,11 @@
 version: 2
- jobs:
-   build:
-     docker:
-       - image: circleci/golang:1.12
-       
-    working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
+jobs:
+  build:
+    docker:
+     
+      - image: circleci/golang:1.12
+      
+    working_directory: /go/src/github.com/ibrahimk9000/HackerRank-King-Richards-Knights
     steps:
       - checkout
 
