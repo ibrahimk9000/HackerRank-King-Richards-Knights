@@ -21,6 +21,7 @@ type abn struct {
 	a     uint64
 	b     uint64
 	angle int 
+}
 
 func tranf(k abn, com []uint64) (uint64, uint64) {
 	var a, b uint64
