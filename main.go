@@ -1,8 +1,7 @@
 // created by ibrahim khochmane
 // email :ibra1990ski@gmail.com
-//just a messy and unmaintainable code
+
 //excution time 299.499202ms for test 4 (I5 pc)
-// O(n log n) approximate
 
 package main
 
@@ -17,14 +16,11 @@ import (
 	"time"
 )
 
-/*
- * Complete the kingRichardKnights function below.
- */
+
 type abn struct {
 	a     uint64
 	b     uint64
-	angle int //every command make 90 degree and angle increment by 1 and change from (x,y) , (y+c,x),(x+c,y+c),(y,x+c)
-}
+	angle int 
 
 func tranf(k abn, com []uint64) (uint64, uint64) {
 	var a, b uint64
@@ -58,7 +54,7 @@ func analyse(k abn, com []uint64, c uint64) (bool, uint64, uint64) {
 	a = k.a - com[0]
 	b = k.b - com[1]
 
-	if a <= 0 || b <= 0 || a > c+1 || b > c+1 { //strange uint cant be smaller than zero ???
+	if a <= 0 || b <= 0 || a > c+1 || b > c+1 { 
 		return true, a, b
 	}
 
@@ -77,7 +73,7 @@ func kingRichardKnights(n uint64, s uint64, knights []uint64, com [][]uint64) []
 		pos[i].b = (knights[i] % n) + 1
 
 	}
-	/////////// position shift between initial position and last position after n commands
+	
 	for i := 0; i < len(com); i++ {
 		var x, y, ksx, ksy, res1, res2 uint64
 
@@ -119,11 +115,7 @@ func kingRichardKnights(n uint64, s uint64, knights []uint64, com [][]uint64) []
 		gr := len(com) //
 		sm := 0
 		sgg := -1
-		//	if ii%1000 == 0 {
-		//	log.Println(ii)
-		//}
-
-		/// something like binary search to define the last command
+		
 		for g := 0; g < 30; g++ {
 			oi := true
 			ss := (gr + sm) / 2
@@ -164,7 +156,7 @@ func kingRichardKnights(n uint64, s uint64, knights []uint64, com [][]uint64) []
 
 		var a, b uint64
 
-		//fmt.Println(pos[ii])
+		
 
 		if sgg == 0 {
 
@@ -178,10 +170,7 @@ func kingRichardKnights(n uint64, s uint64, knights []uint64, com [][]uint64) []
 		result[ii][0] = a
 		result[ii][1] = b
 
-		if ii < 20 {
-			//	log.Println(a, "   ", b, pos[ii].angle)
-			log.Println(a, "   ", b, " ", pos[ii].angle)
-		}
+		
 	}
 
 	return result
@@ -235,8 +224,7 @@ func main() {
 	result := kingRichardKnights(n, s, knights, commands)
 
 	elapsed := time.Since(start)
-	log.Printf("Binomial took %s", elapsed.String())
-	//
+	
 
 	for resultRowItr, rowItem := range result {
 		for resultColumnItr, colItem := range rowItem {
