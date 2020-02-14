@@ -222,10 +222,7 @@ func main() {
 	//
 	start := time.Now()
 	result := kingRichardKnights(n, s, knights, commands)
-
-	elapsed := time.Since(start)
 	
-
 	for resultRowItr, rowItem := range result {
 		for resultColumnItr, colItem := range rowItem {
 			fmt.Fprintf(writer, "%d", colItem)
