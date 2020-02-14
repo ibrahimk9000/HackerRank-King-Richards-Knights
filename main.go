@@ -220,7 +220,6 @@ func main() {
 
 	}
 	//
-	start := time.Now()
 	result := kingRichardKnights(n, s, knights, commands)
 	
 	for resultRowItr, rowItem := range result {
